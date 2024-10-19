@@ -1,46 +1,140 @@
-# Getting Started with Create React App
+# Tooltip Component
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A responsive and accessible web-based tooltip component that provides contextual information on hover or click interactions. This component features two modes of activation: a hover tip that disappears when the mouse moves away, and a click tip that remains visible until the user clicks outside the tooltip area or presses a close button.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Folder Structure](#folder-structure)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Component Architecture](#component-architecture)
+- [Technologies Used](#technologies-used)
+- [Design and Decision-Making Process](#design-and-decision-making-process)
+- [Contributing](#contributing)
+- [License](#license)
 
-### `npm start`
+## Folder Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+    tooltip-component/
+    ├── node_modules
+    ├── public
+    │   ├── favicon.ico
+    │   ├── index.html
+    │   ├── logo192.png
+    │   ├── logo512.png
+    │   ├── manifest.json
+    │   └── robots.txt
+    ├── src
+    │   ├── components
+    │   │   ├── Tooltip.css
+    │   │   └── Tooltip.tsx
+    │   ├── App.css
+    │   ├── App.test.tsx
+    │   ├── App.tsx
+    │   ├── index.css
+    │   ├── index.tsx
+    │   ├── logo.svg
+    │   ├── react-app-env.d.ts
+    │   ├── reportWebVitals.ts
+    │   └── setupTests.ts
+    ├── .gitignore
+    ├── LICENSE
+    ├── package-lock.json
+    ├── package.json
+    ├── README.md
+    ├── README.old.md
+    └── tsconfig.json
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Installation
 
-### `npm test`
+To get started with the tooltip component, follow these steps:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **Clone the repository:**
 
-### `npm run build`
+   ```bash
+   git clone https://github.com/itsRkator/tooltip.git
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. **Navigate into the project directory:**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```bash
+   cd tooltip
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. **Install the dependencies:**
 
-### `npm run eject`
+   ```bash
+   npm install
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+4. **Start the application:**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```bash
+   npm start
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+5. **Open your browser and go to:**
+   ```
+   http://localhost:3000
+   ```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Usage
 
-## Learn More
+To use the tooltip component in your application, import it and pass the necessary props as shown below:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```jsx
+import Tooltip from "./components/Tooltip";
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+function App() {
+  return (
+    <div style={{ padding: "50px" }}>
+      <Tooltip
+        content="This is a tooltip handled on mouse hover event!"
+        trigger="hover"
+      >
+        Hover!
+      </Tooltip>
+      <Tooltip
+        content="This is a tooltip handled on mouse click event!"
+        trigger="click"
+      >
+        Click!
+      </Tooltip>
+    </div>
+  );
+}
+
+export default App;
+```
+
+## Component Architecture
+
+The tooltip component is structured as follows:
+
+- **Tooltip.tsx**: The main React component that handles the tooltip logic and rendering.
+- **Tooltip.css**: The stylesheet that defines the styles for the tooltip component, including positioning, colors, and responsive behavior.
+
+## Technologies Used
+
+- **Frontend Technologies**: HTML, CSS, JavaScript
+- **Framework**: React
+- **Language**: TypeScript
+- **Tools**: npm, create-react-app
+
+## Design and Decision-Making Process
+
+1. **Interactivity**: The component supports both hover and click interactions, enhancing user engagement and providing flexibility in displaying information.
+
+2. **User Experience**: Tooltips are designed to be non-intrusive, appearing only when necessary and adapting their position dynamically to avoid clipping or obscuring other UI elements.
+
+3. **Accessibility**: The tooltip component includes ARIA attributes for accessibility, ensuring it is operable via keyboard controls and readable by screen readers.
+
+4. **Responsive Design**: The tooltip adapts its position based on available screen space, ensuring a consistent experience across various devices and screen sizes.
+
+5. **Transitions**: Smooth transitions are implemented for the appearance and disappearance of tooltips to enhance visual interaction.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
