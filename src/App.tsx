@@ -1,24 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Tooltip from "./components/Tooltip";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ padding: "50px" }}>
+      <Tooltip
+        content="This is a tooltip handled on mouse hover event!"
+        trigger="hover"
+      >
+        Hover!
+      </Tooltip>
+      <Tooltip
+        content="This is a tooltip handled on mouse click event!"
+        trigger="click"
+      >
+        Click!
+      </Tooltip>
     </div>
   );
 }
