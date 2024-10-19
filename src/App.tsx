@@ -7,13 +7,13 @@ function App() {
         content="This is a tooltip handled on mouse hover event!"
         trigger="hover"
       >
-        Hover!
+        Hover Me...!
       </Tooltip>
       <Tooltip
         content="This is a tooltip handled on mouse click event!"
         trigger="click"
       >
-        Click!
+        Click me...!
       </Tooltip>
     </div>
   );
